@@ -13,7 +13,7 @@ import IconEmergencyAssistance from "../components/atoms/icons/IconEmergencyAssi
 
 export default function Test1() {
   return (
-      <BackgroundTemplate source={require("../assets/images/SignIn.png")}>
+      <BackgroundTemplate>
         <Text>Open up App.js to start working on your app!</Text>
         <MaterialCommunityIcons
           name="alarm-light"
