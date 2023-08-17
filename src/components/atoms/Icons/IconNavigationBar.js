@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Image, StyleSheet } from "react-native";
 
+{/* iconNavigationBar can be used to display: house, case, earth, rocket, profile */}
 export default function IconNavigationBar({ source, onPress }) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>

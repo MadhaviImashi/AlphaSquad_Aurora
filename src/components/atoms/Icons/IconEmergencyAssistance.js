@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   icon: {
-    width: 25,
-    height: 25,
+    width: 73,
+    height: 73,
   },
 });
