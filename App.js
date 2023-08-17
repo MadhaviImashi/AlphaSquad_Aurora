@@ -2,12 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import TextHeading1 from "./src/components/atoms/texts/TextHeading1";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import RoundIconButton from "./src/components/atoms/buttons/ButtonRoundedBackward";
 import BackgroundImage from "./src/components/templeates/BackgroundTempleate";
 import IconProfileData from "./src/components/atoms/icons/IconProfileData";
 import IconNavigationBar from "./src/components/atoms/icons/IconNavigationBar";
 import CardTripsHistoryItem from "./src/components/molecules/ItemCards/CardTripsHistoryItem";
 import IconPlanet from "./src/components/atoms/icons/IconPlanet";
+import IconBackwardArrow from "./src/components/atoms/icons/IconBackwardArrow";
 
 export default function App() {
   return (
@@ -20,11 +20,10 @@ export default function App() {
           size={24}
           color="red"
           onPress={() => {
-            handleDeleteItem(itemId);
-            setselectedEventTitle(item.title);
+            console.log('button pressed')
           }}
         />
-        <RoundIconButton onPress={() => console.log("Button pressed")} />
+        <IconBackwardArrow onPress={() => console.log("Button pressed")} />
         <StatusBar style="auto" />
         <IconProfileData
           source={require("./src/assets/images/profileIcons/payment.png")}
