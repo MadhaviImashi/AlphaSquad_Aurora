@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    resizeMode: "cover", // or "contain" depending on your preference
-    width: "100%", // Make the width 100% of the screen
+    resizeMode: "cover", 
+    width: "100%", 
   },
   content: {
     flex: 1,
