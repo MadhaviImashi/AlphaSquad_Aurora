@@ -4,9 +4,9 @@ import { StyleSheet, View, ImageBackground } from "react-native";
 export default function BackgroundTemplate({ source, children }) {
   return (
     <View style={styles.container}>
-      <ImageBackground source={source} style={styles.background}>
-        <View style={styles.content}>{children}</View>
-      </ImageBackground>
+        <ImageBackground source={require("../../assets/images/background.png")} style={styles.background}>
+          <View style={styles.content}>{children}</View>
+        </ImageBackground>
     </View>
   );
 }
