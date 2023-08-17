@@ -1,15 +1,23 @@
 import React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 
-export default function BackgroundImage({ source, children }) {
+export default function BackgroundTemplate({ source, children }) {
   return (
-    <ImageBackground source={source} style={styles.background}>
-      <View style={styles.content}>{children}</View>
-    </ImageBackground>
+    <View style={styles.container}>
+      <ImageBackground source={source} style={styles.background}>
+        <View style={styles.content}>{children}</View>
+      </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   background: {
     flex: 1,
     resizeMode: "cover", // or "contain" depending on your preference
@@ -19,6 +27,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-
   },
 });
