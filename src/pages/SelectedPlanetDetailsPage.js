@@ -15,6 +15,7 @@ import IconBackwardArrow from "../components/atoms/icons/IconBackwardArrow";
 import TextBody from "../components/atoms/texts/TextBody";
 import IconFavorite from "../components/atoms/icons/IconFavorite";
 import IconPlanet from "../components/atoms/icons/IconPlanet";
+import PlanetDetailIconPalette from "../components/molecules/PlanetDetailIconPalette";
 
 const SelectedPlanetDetailsPage = ({ img, data }) => {
   return (
@@ -61,75 +62,7 @@ const SelectedPlanetDetailsPage = ({ img, data }) => {
                   ></TextBody>
                 </TouchableOpacity>
               </View>
-              <View style={styles.planetIconContainer}>
-                <View style={styles.iconGroup}>
-                  <View style={styles.icon}>
-                    <IconPlanet
-                      source={require("../assets/images/planetIcons/star.png")}
-                    ></IconPlanet>
-                  </View>
-                  <View style={styles.iconInfo}>
-                    <TextBody
-                      value={"4.5"}
-                      fontSize={18}
-                      fontWeight={700}
-                      lineHeight={27}
-                    ></TextBody>
-                    <TextBody
-                      value={"Ratings"}
-                      fontSize={15}
-                      fontWeight={400}
-                      lineHeight={22.5}
-                    ></TextBody>
-                  </View>
-                </View>
-                <View style={styles.iconGroup}>
-                  <View style={styles.icon}>
-                    <IconPlanet
-                      source={require("../assets/images/planetIcons/cloud.png")}
-                      width={27}
-                      height={19}
-                    ></IconPlanet>
-                  </View>
-                  <View style={styles.iconInfo}>
-                    <TextBody
-                      value={"38 °C"}
-                      fontSize={18}
-                      fontWeight={700}
-                      lineHeight={27}
-                    ></TextBody>
-                    <TextBody
-                      value={"Temperature"}
-                      fontSize={15}
-                      fontWeight={400}
-                      lineHeight={22.5}
-                    ></TextBody>
-                  </View>
-                </View>
-                <View style={styles.iconGroup}>
-                  <View style={styles.icon}>
-                    <IconPlanet
-                      source={require("../assets/images/planetIcons/rocketRed.png")}
-                      width={21}
-                      height={21}
-                    ></IconPlanet>
-                  </View>
-                  <View style={styles.iconInfo}>
-                    <TextBody
-                      value={"8 Days"}
-                      fontSize={18}
-                      fontWeight={700}
-                      lineHeight={27}
-                    ></TextBody>
-                    <TextBody
-                      value={"Duration"}
-                      fontSize={15}
-                      fontWeight={400}
-                      lineHeight={22.5}
-                    ></TextBody>
-                  </View>
-                </View>
-              </View>
+              <PlanetDetailIconPalette></PlanetDetailIconPalette>
               <TextBody
                 value={
                   "Mars is the fourth planet from the sun and has a distinct rusty red appearance and two unusual moons.\n\n" +
@@ -235,27 +168,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     marginBottom: 20,
-  },
-  // icon group styles
-  planetIconContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  iconGroup: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 25,
-  },
-  icon: {
-    marginRight: 8,
-    verticalAlign: "middle",
-    paddingTop: 10,
-  },
-  iconInfo: {
-    display: "flex",
-    flexDirection: "column",
   },
   // bottom nav bar
   // bottomNavButtonContainer: {
