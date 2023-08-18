@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import Test1 from "./src/pages/test_page_1";
 import Test2 from "./src/pages/test_page_2";
-import Tabs from "./src/navigation/Tabs";
+import Tabs from "./src/components/molecules/navigationBar/BottomAppBar";
 import SelectedPlanetDetailsPage from "./src/pages/SelectedPlanetDetailsPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();

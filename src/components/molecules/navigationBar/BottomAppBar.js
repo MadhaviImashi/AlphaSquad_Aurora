@@ -1,13 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, View } from "react-native";
-import SelectedPlanetDetailsPage from "../pages/SelectedPlanetDetailsPage";
-import IconNavigationBar from "../components/atoms/icons/IconNavigationBar";
-import Test1 from "../pages/test_page_1";
-import Home from "../pages/Home";
+import Test1 from "../../../pages/test_page_1";
+import Home from "../../../pages/Home";
 
 const Tab = createBottomTabNavigator();
 
-export default Tabs = () => {
+export default BottomAppBar = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -15,14 +13,16 @@ export default Tabs = () => {
         tabBarStyle: {
           position: "absolute",
           bottom: 25,
-          paddingLeft: 10,
-          paddingRight: 10,
-          left: 20,
-          right: 20,
-          elevation: 0,
+          paddingLeft: 15,
+          paddingRight: 15,
+          left: 25,
+          right: 25,
+          elevation: 2,
           backgroundColor: "white",
           borderRadius: 22,
-          height: 80,
+          border: 5,
+          borderColor: 'black',
+          height: 78,
         },
         tabBarLabelStyle: {
           fontSize: 14,
@@ -32,36 +32,35 @@ export default Tabs = () => {
         tabBarLabel: () => null,
         tabBarIcon: ({ focused }) => {
           let iconImagePath;
+          let name;
 
           if (route.name === "home") {
             iconImagePath = focused
-              ? require("../assets/images/navigationBar/selectedHouse.png")
-              : require("../assets/images/navigationBar/house.png");
+              ? require("../../../assets/images/navigationBar/selectedHouse.png")
+              : require("../../../assets/images/navigationBar/house.png");
           } else if (route.name === "test2") {
             iconImagePath = focused
-              ? require("../assets/images/navigationBar/selectedcase.png")
-              : require("../assets/images/navigationBar/case.png");
+              ? require("../../../assets/images/navigationBar/selectedcase.png")
+              : require("../../../assets/images/navigationBar/case.png");
           } else if (route.name === "test3") {
             iconImagePath = focused
-              ? require("../assets/images/navigationBar/selectedEarth.png")
-              : require("../assets/images/navigationBar/earth.png");
+              ? require("../../../assets/images/navigationBar/selectedEarth.png")
+              : require("../../../assets/images/navigationBar/earth.png");
           } else if (route.name === "test4") {
             iconImagePath = focused
-              ? require("../assets/images/navigationBar/selectedRocket.png")
-              : require("../assets/images/navigationBar/rocket.png");
+              ? require("../../../assets/images/navigationBar/selectedRocket.png")
+              : require("../../../assets/images/navigationBar/rocket.png");
           } else if (route.name === "test5") {
+            name = 'profile'
             iconImagePath = focused
-              ? require("../assets/images/navigationBar/selectedProfile.png")
-              : require("../assets/images/navigationBar/profile.png");
+              ? require("../../../assets/images/navigationBar/selectedProfile.png")
+              : require("../../../assets/images/navigationBar/profile.png");
           }
 
           return (
             <Image
               source={iconImagePath}
-              style={{
-                width: 24,
-                height: 24,
-              }}
+              name={name}
             />
           );
         },
