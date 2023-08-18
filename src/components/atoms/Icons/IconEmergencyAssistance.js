@@ -11,7 +11,7 @@ export default function IconEmergencyAssistance({ source, onPress }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    // padding: 10,
   },
   icon: {
     width: 73,

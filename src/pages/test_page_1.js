@@ -36,7 +36,7 @@ export default function Test1({ navigation }) {
 
       <View style={styles.content}>
         <IconEmergencyAssistance
-          source={require("../assets/images/emergencyIcons/Group.png")}
+          source={require("../assets/images/emergencyIcons/emProtocol.png")}
         />
         <IconEmergencyAssistance
           source={require("../assets/images/emergencyIcons/DistressBeacon.png")}
