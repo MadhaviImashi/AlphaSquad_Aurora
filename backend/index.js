@@ -1,10 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const userRouter = require("./routes/user.router");
 
 const PORT = process.env.PORT || 5000;
 // create express app
 const app = express();
+
+//json parsing function
+app.use(express.json());
+
+//routes
+app.use("/api/users", userRouter);
 
 // connect to mongodb
 mongoose.connect(
