@@ -15,7 +15,7 @@ app.use("/api/users", userRouter);
 
 // connect to mongodb
 mongoose.connect(
-  `mongodb+srv://${process.env.MONGODB_ADMIN_USERNAME}:${process.env.MONGODB_ADMIN_PASSWORD}@alphasquadauroracluster.cy8nvic.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://${process.env.MONGODB_ADMIN_USERNAME}:${process.env.MONGODB_ADMIN_PASSWORD}@alphasquadauroracluster.cy8nvic.mongodb.net/DB?retryWrites=true&w=majority`
 );
 const mongodbConnection = mongoose.connection;
 mongodbConnection.on("error", (error) => console.error(error));
