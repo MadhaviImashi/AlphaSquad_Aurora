@@ -5,6 +5,7 @@ import Tabs from "./src/components/molecules/navigationBar/BottomAppBar";
 import SelectedPlanetDetailsPage from "./src/pages/SelectedPlanetDetailsPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CreateNewBookingPage from "./src/pages/CreateNewBookingPage";
+import CreateNewBookingSecondPage from "./src/pages/CreateNewBookingSecondPage";
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -29,6 +30,11 @@ const MyStack = () => {
         options={{ headerShown: false }}
         component={CreateNewBookingPage}
         name="CreateNewBookingPage"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={CreateNewBookingSecondPage}
+        name="CreateNewBookingSecondPage"
       />
     </Stack.Navigator>
   );

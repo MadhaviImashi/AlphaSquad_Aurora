@@ -1,5 +1,6 @@
 import {
   ImageBackground,
+  ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -8,12 +9,18 @@ import ProfileDetail from "../components/molecules/profileDetail";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
-import twoWayButton from "../assets/images/booking/twoWayButton.png";
-import CardShip from "../components/molecules/ItemCards/CardShip";
 import planeCard from "../assets/images/booking/planeCard.png";
 import destinationCard from "../assets/images/booking/destinationCard.png";
+import dateCard from "../assets/images/booking/dateCard.png";
+import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
+import CardBookingDropDown from "../components/molecules/ItemCards/CardBookingDropDown";
+import CardBookingDate from "../components/molecules/ItemCards/CardBookingDate";
 
-export default CreateNewBookingPage = () => {
+export default CreateNewBookingPage = ({ navigation }) => {
+  const onPress = () => {
+    navigation.navigate("CreateNewBookingSecondPage");
+  };
+
   return (
     <BackgroundTemplate justifyContent="flex-start" alignItems={"flex-start"}>
       <View style={styles.container}>
@@ -41,6 +48,7 @@ export default CreateNewBookingPage = () => {
         <View>
           <Progress status={"1"} />
         </View>
+
         {/* buttonSection */}
         <View style={styles.buttonSection}>
           <TouchableOpacity>
@@ -78,20 +86,41 @@ export default CreateNewBookingPage = () => {
             </ImageBackground>
           </TouchableOpacity>
         </View>
-        <View>
-          <CardShip
-            cardImage={planeCard}
-            state={"From"}
-            location={"Test"}
-          />
-        </View>
-        <View>
-          <CardShip
-            cardImage={destinationCard}
-            state={"To"}
-            location={"Test"}
-          />
-        </View>
+        <ScrollView>
+          <View style={styles.scrollView}>
+            <View>
+              <CardBookingDropDown
+                cardImage={planeCard}
+                state={"From"}
+                location={"Test"}
+              />
+            </View>
+            <View>
+              <CardBookingDropDown
+                cardImage={destinationCard}
+                state={"To"}
+                location={"Test"}
+              />
+            </View>
+            <View>
+              <CardBookingDate
+                cardImage={dateCard}
+                state={"To"}
+                location={"Test"}
+              />
+            </View>
+            <View>
+              <CardBookingDate
+                cardImage={dateCard}
+                state={"To"}
+                location={"Test"}
+              />
+            </View>
+            <View style={styles.nextButton}>
+              <ButtonBookNow ButtonName={"Next"} onPress={onPress} />
+            </View>
+          </View>
+        </ScrollView>
       </View>
     </BackgroundTemplate>
   );
@@ -122,5 +151,11 @@ const styles = StyleSheet.create({
   },
   heading: {
     paddingTop: 10,
+  },
+  scrollView: {
+    paddingBottom: 200,
+  },
+  nextButton: {
+    right: 12,
   },
 });
