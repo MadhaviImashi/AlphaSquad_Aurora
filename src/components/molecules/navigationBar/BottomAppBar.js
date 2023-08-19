@@ -1,7 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image, View } from "react-native";
+
 import Test1 from "../../../pages/test_page_1";
 import Home from "../../../pages/Home";
+import BookingHistory from "../../../pages/BookingHistory";
+
+// import SelectedPlanetDetailsPage from "../pages/SelectedPlanetDetailsPage";
+// import IconNavigationBar from "../components/atoms/icons/IconNavigationBar";
+// // import Test1 from "../pages/test_page_1";
+// import Home from "../pages/Home";
+// import BookingHistory from "../pages/BookingHistory";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,8 +29,8 @@ export default BottomAppBar = () => {
           backgroundColor: "white",
           borderRadius: 22,
           border: 5,
-          borderColor: 'black',
-          height: 72,
+          borderColor: "black",
+          height: 78,
         },
         tabBarLabelStyle: {
           fontSize: 14,
@@ -51,23 +59,18 @@ export default BottomAppBar = () => {
               ? require("../../../assets/images/navigationBar/selectedRocket.png")
               : require("../../../assets/images/navigationBar/rocket.png");
           } else if (route.name === "test5") {
-            name = 'profile'
+            name = "profile";
             iconImagePath = focused
               ? require("../../../assets/images/navigationBar/selectedProfile.png")
               : require("../../../assets/images/navigationBar/profile.png");
           }
 
-          return (
-            <Image
-              source={iconImagePath}
-              name={name}
-            />
-          );
+          return <Image source={iconImagePath} name={name} />;
         },
       })}
     >
       <Tab.Screen name="home" component={Home} />
-      <Tab.Screen name="test2" component={Test1} />
+      <Tab.Screen name="test2" component={BookingHistory} />
       <Tab.Screen name="test3" component={Test1} />
       <Tab.Screen name="test4" component={Home} />
       <Tab.Screen name="test5" component={Test1} />

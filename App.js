@@ -4,6 +4,7 @@ import Test2 from "./src/pages/test_page_2";
 import Tabs from "./src/components/molecules/navigationBar/BottomAppBar";
 import SelectedPlanetDetailsPage from "./src/pages/SelectedPlanetDetailsPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CreateNewBookingPage from "./src/pages/CreateNewBookingPage";
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -23,6 +24,11 @@ const MyStack = () => {
         options={{ headerShown: false }}
         component={Test1}
         name="Test1"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={CreateNewBookingPage}
+        name="CreateNewBookingPage"
       />
     </Stack.Navigator>
   );

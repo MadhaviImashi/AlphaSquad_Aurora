@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { StyleSheet } from "react-native";
 
-export default function TextBody({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, right}) {
+export default function TextBody({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, right,bottom}) {
   
   const customStyles = {
     ...styles.TextSmall,
@@ -13,6 +13,7 @@ export default function TextBody({ value, fontSize, lineHeight, fontWeight, text
       marginBottom: marginBottom || styles.TextSmall.marginBottom,
       marginRight: right || styles.TextSmall.marginRight,
       color: color || styles.TextSmall.color,
+      bottom: bottom || styles.TextSmall.bottom,
   };
 
   return <Text style={customStyles}>{value}</Text>;
@@ -28,5 +29,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginBottom: 0,
     marginRight: 0,
+    bottom:0
   },
 });
