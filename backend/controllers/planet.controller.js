@@ -13,7 +13,7 @@ const getAllPlanets = async (req, res) => {
 
 const getPlanetByName = async (req, res) => {
   try {
-    const planet = await planetService.getPlanetByName();
+    const planet = await planetService.getPlanetByName(req.planetName);
     res.status(200).json(planet);
   } catch (error) {
     res.status(500).json({
